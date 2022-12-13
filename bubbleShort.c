@@ -6,6 +6,7 @@ int main(){
     int totalLength = sizeof(numbers);
     int length = totalLength/indivisulaLength;
     bubble_short(numbers, indexValue, length);
+    return 0;
 }
 int bubble_short(int numbers[], int indexValue, int length){
     // printf("%d", numbers[2]);
@@ -21,7 +22,13 @@ int bubble_short(int numbers[], int indexValue, int length){
         // printf("\n %d", numbers[--length]);
     }
 
-    for(int r=length-1; r>=0; r--){
+
+    for(int r=0; r<length; r++){
         printf("\n %d", numbers[r]);
     }
+    
+    // for(int r=length-1; r>=0; r--){
+    //     printf("\n %d", numbers[r]);
+    // }
+    return 0;
 }
