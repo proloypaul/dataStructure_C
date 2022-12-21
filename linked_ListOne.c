@@ -46,10 +46,51 @@ Node *remove_node(Node *head, Node *node){
     free(node);
     return head;
 }
+// add node first, anywhere and last position
+
+// added node first position on Liked List
+Node *prepend(Node *head, int item){
+    Node *new_node = create_node(item, head);
+    return new_node;
+}
+
+// add node last position on Linked list
+Node *append(Node *head, int item){
+    Node *new_node = create_node(item, NULL);
+
+    if(head == NULL){
+        return new_node;
+    }
+
+    Node *current_node = head;
+    while(current_node->next != NULL){
+        current_node = current_node->next;
+    }
+
+    current_node->next = new_node;
+    return head;
+}
+
+// add node anywhere position on Linked list
+void insert(Node *node, int item){
+    Node *new_node = create_node(item, node->next);
+    node->next = new_node;
+}
+
+// traversal data from Linked list
+void traversing_Data(Node *head){
+    Node *current_Node = head;
+    // printf("data %d", current_Node->data);
+    while(current_Node != NULL){
+        printf("%d \n", current_Node->data);
+        current_Node = current_Node->next;
+    };
+}
 
 int main(){
     Node *n;
     n = create_node(10, NULL);
-    printf("data = %d", n->data);
+    printf("data = %d \n", n->data);
+    printf("object = %d", n);
     return 0;
 }
